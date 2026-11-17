@@ -1,0 +1,213 @@
+{
+  "sectorGroups": [
+    [
+      "section-dealers.webp",
+      "Independent used car dealer holding vehicle keys",
+      "01 / ON THE FORECOURT",
+      "Independent dealers",
+      "From a single pitch to a growing dealer group.",
+      [
+        "Independent used car dealers",
+        "Small dealer groups"
+      ]
+    ],
+    [
+      "section-workshops.webp",
+      "Mechanic inspecting a raised vehicle wheel",
+      "02 / IN THE WORKSHOP",
+      "Garages & repair specialists",
+      "Support that keeps pace with a busy workshop.",
+      [
+        "Garages, workshops & body shops",
+        "MOT & service centres"
+      ]
+    ],
+    [
+      "section-prestige.webp",
+      "Classic sports car outside a specialist workshop",
+      "03 / A SPECIALIST MARKET",
+      "Specialist & prestige dealers",
+      "Financial clarity for businesses with a passion for cars.",
+      [
+        "Specialist vehicle dealers",
+        "Prestige vehicle dealers"
+      ]
+    ]
+  ],
+  "painGroups": [
+    [
+      "01",
+      "Not knowing where you stand",
+      "An unclear financial picture. Multiple income streams that are difficult to track.",
+      "Clarity over your business performance."
+    ],
+    [
+      "02",
+      "Tax that catches you out",
+      "Uncertainty about your finances and taxes, or how much you’ll owe and when.",
+      "A clearer view of what’s ahead."
+    ],
+    [
+      "03",
+      "An accountant who doesn’t get it",
+      "Hard to reach. Unfamiliar with the motor trade. Short on practical advice.",
+      "Specialist support you can talk to."
+    ],
+    [
+      "04",
+      "Too much resting on your shoulders",
+      "Struggling to recruit and retain the finance people your business needs.",
+      "A virtual finance team behind you."
+    ]
+  ],
+  "services": [
+    [
+      "Accounts & tax returns",
+      "Your numbers, in good order.",
+      "Clear accounts and timely returns, shaped around your motor trade business. We help turn the paperwork into a financial picture you can understand.",
+      [
+        "Year-end accounts",
+        "Tax return support",
+        "Clear explanations"
+      ],
+      "section-accounts.webp",
+      "Accounting paperwork and calculator on an organised desk"
+    ],
+    [
+      "VAT & margin scheme",
+      "Get the detail right.",
+      "Used vehicle stock brings its own VAT considerations. Get specialist support with your reporting, records and the treatment of eligible vehicles.",
+      [
+        "VAT reporting",
+        "Margin scheme guidance",
+        "Stock record reviews"
+      ],
+      "section-vat.webp",
+      "Vehicle keys and a sales invoice beside a calculator"
+    ],
+    [
+      "Stock & stocking finance",
+      "See beyond the forecourt.",
+      "Understand how your stock, funding and cash flow fit together, so you can make better-informed buying and selling decisions.",
+      [
+        "Stock visibility",
+        "Funding commitments",
+        "Cash flow insight"
+      ],
+      "section-stock.webp",
+      "Vehicles available for sale on a forecourt"
+    ],
+    [
+      "Payroll",
+      "Look after the people behind you.",
+      "Help keeping your team’s pay and payroll obligations in order, leaving you more time to manage the workshop or dealership.",
+      [
+        "Payroll support",
+        "Pay information",
+        "Ongoing guidance"
+      ],
+      "section-payroll.webp",
+      "Garage colleagues at a morning briefing"
+    ],
+    [
+      "Management accounts",
+      "Know where you stand.",
+      "Regular financial information helps you understand performance, spot changes and make decisions before year-end arrives.",
+      [
+        "Regular reporting",
+        "Performance insight",
+        "Practical conversations"
+      ],
+      "section-management.webp",
+      "Business owner reviewing charts on a laptop"
+    ],
+    [
+      "Tax planning",
+      "Fewer surprises. More forward thinking.",
+      "Plan ahead for tax with specialist support that considers your business and individual circumstances.",
+      [
+        "Forward planning",
+        "Tax position reviews",
+        "Specialist advice"
+      ],
+      "section-tax.webp",
+      "Business owner reviewing tax planning paperwork"
+    ],
+    [
+      "Business development",
+      "Make room for what’s next.",
+      "Practical guidance as your business grows and changes, from understanding your current performance to considering your next move.",
+      [
+        "Growth conversations",
+        "Business performance",
+        "Informed decisions"
+      ],
+      "section-growth.webp",
+      "Independent motor trade owner in an additional workshop bay"
+    ],
+    [
+      "Business protection",
+      "Think beyond today.",
+      "Consider risk, safeguard assets and plan for the future with advice focused on the long-term stability of your motor trade business.",
+      [
+        "Risk considerations",
+        "Asset protection planning",
+        "Long-term support"
+      ],
+      "section-protection.webp",
+      "Garage owner securing vehicle keys in a cabinet"
+    ]
+  ],
+  "locationFaqs": [
+    [
+      "What happens on the free discovery call?",
+      "We talk about your business, your current challenges and the support you need. It’s an opportunity to ask questions and understand how we could help, with no obligation."
+    ],
+    [
+      "Which motor trade businesses do you support?",
+      "Independent dealers, small dealer groups, garages, workshops, body shops and specialist businesses, from start-ups to businesses turning over around £15 million."
+    ],
+    [
+      "Can you work with our existing bookkeeper?",
+      "Yes. We can work alongside your existing team, filling gaps and providing specialist support where it’s needed."
+    ],
+    [
+      "Can you review our current tax and accounts?",
+      "Yes. A business health check can identify issues in your systems, accounts and tax position. Any recommendations depend on your individual circumstances."
+    ],
+    [
+      "Do I need to visit your Norwich office?",
+      "No. Although we are based in Hethersett, Norwich, our service is fully remote. We work with you by phone, video call and cloud accounting software, without office appointments or client visits."
+    ],
+    [
+      "Can you take over from my current Norwich accountant mid-year?",
+      "We can discuss a mid-year switch and help plan a practical handover. The timing depends on your records, upcoming deadlines and existing arrangements."
+    ]
+  ],
+  "marginFaqs": [
+    [
+      "Which cars qualify for the margin scheme?",
+      "Eligible second-hand vehicles can qualify when the purchase and record-keeping conditions are met. New vehicles, separately VAT-invoiced purchases and most imports are excluded. Special cases, including Northern Ireland and collectors’ vehicles, need separate consideration."
+    ],
+    [
+      "Can I use it on a car bought from a VAT-registered dealer?",
+      "The purchase invoice and the transaction both matter. A car bought on an invoice showing VAT separately cannot be sold under the margin scheme, even if you did not reclaim that VAT. Where a dealer sells under the margin scheme, the invoice should carry the appropriate margin scheme wording; the other eligibility conditions still apply."
+    ],
+    [
+      "What records do I need?",
+      "Keep your usual VAT records, a stock book tracking each vehicle and purchase and sales invoices. Include the vehicle registration number, or VIN where there is no registration, and make/model. Margin scheme invoices must meet the relevant requirements, including the scheme wording on sales invoices without VAT shown separately."
+    ],
+    [
+      "How do part-exchanges work?",
+      "The agreed part-exchange value forms part of the selling price of the car you supply. That same value becomes the purchase price of the vehicle taken in part-exchange. Check the incoming vehicle is eligible and record it properly."
+    ],
+    [
+      "Can you review past VAT returns and help correct mistakes?",
+      "We can discuss a review of past returns and the records behind them. If errors are identified, we can help establish the appropriate correction process. An error may mean an overpayment or an underpayment; a refund is not guaranteed."
+    ],
+    [
+      "Do you work with dealers outside Norfolk?",
+      "Yes. We support independent dealers across the UK remotely, using phone, video calls and cloud accounting software. You do not need to visit an office."
+    ]
+  ]
+}

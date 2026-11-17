@@ -4,6 +4,9 @@
   "compatibility_date": "2026-10-01",
   // Static copy of the WordPress site (./public) behind a small Worker.
   "main": "worker.js",
+  // Builds the two Next.js PPC templates (lp-templates/) to static HTML and copies them into
+  // ./public/lp, ./public/_next and ./public/assets before every deploy.
+  "build": { "command": "npm run build:lp" },
   "assets": {
     "directory": "./public/",
     "binding": "ASSETS",

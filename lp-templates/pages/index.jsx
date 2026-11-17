@@ -1,0 +1,4 @@
+import Head from 'next/head';
+export default function Home() {
+ return <><Head><title>Motortrade Accountants — PPC templates</title></Head><main className="export-index wrap"><img src="/assets/logo.png" alt="The Motortrade Accountants" width="300" height="69" /><p className="eyebrow">TWO DISTINCT PPC DESIGNS</p><h1>Choose a template.</h1><div className="export-options"><a href="/lp/norwich/"><img src="/assets/section-hero.webp" alt="Independent used car forecourt" /><div><h2>Norwich location page</h2><p>Local positioning, service explorer and discovery call.</p><span className="button">Open location template →</span></div></a><a href="/lp/margin-scheme/"><img src="/assets/section-stock.webp" alt="Vehicles on a forecourt" /><div><h2>VAT margin scheme page</h2><p>Five-point self-check and a free margin scheme review.</p><span className="button">Open VAT template →</span></div></a></div></main></>;
+}

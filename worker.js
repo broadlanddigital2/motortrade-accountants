@@ -15,6 +15,13 @@ const REDIRECTS = {
   "/contact/": "/contact-us/",
 };
 
+// PPC landing pages (built from lp-templates/). Each keyword variant is its own static page;
+// ?kw=<variant> on the base URL redirects there, keeping gclid, UTM and every other parameter.
+const LP_VARIANTS = {
+  "/lp/norwich/": { automotive: "automotive/" },
+  "/lp/margin-scheme/": { "vat-margin-scheme": "vat-margin-scheme/", "second-hand": "second-hand/" },
+};
+
 const PROXY_PREFIXES = ["/wp-admin/admin-ajax.php", "/wp-json/"];
 const FALLBACK_PREFIXES = ["/wp-content/", "/wp-includes/"];
 
@@ -29,6 +36,13 @@ export default {
 
     const to = REDIRECTS[url.pathname];
     if (to) return Response.redirect(new URL(to + url.search, url).toString(), 301);
+
+    const base = url.pathname.endsWith("/") ? url.pathname : url.pathname + "/";
+    const variants = LP_VARIANTS[base];
+    if (variants) {
+      const target = variants[url.searchParams.get("kw") || ""];
+      if (target) return Response.redirect(new URL(base + target + url.search, url).toString(), 302);
+    }
 
     const origin = env.WP_ORIGIN ? new URL(env.WP_ORIGIN) : null;
     // Never proxy to ourselves (e.g. after the live domain is pointed here).
@@ -69,7 +83,8 @@ async function proxy(request, url, origin) {
 }
 
 function withHeaders(res, url) {
-  if (!url.hostname.endsWith(".workers.dev")) return res;
+  // PPC pages are never indexed, on any domain; the rest of the site only on the live domain.
+  if (!url.hostname.endsWith(".workers.dev") && !url.pathname.startsWith("/lp/")) return res;
   const out = new Response(res.body, res);
   out.headers.set("X-Robots-Tag", "noindex, nofollow");
   return out;

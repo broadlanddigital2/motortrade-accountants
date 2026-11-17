@@ -1,3 +1,12 @@
 node_modules/
 .wrangler/
 .dev.vars
+
+# Built at deploy time from lp-templates/ (see scripts/copy-lp.mjs)
+public/lp/
+public/_next/
+public/assets/
+lp-templates/.next/
+lp-templates/out/
+lp-templates/node_modules/
+lp-templates/.env.local

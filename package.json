@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "npm run build:lp",
+    "build:lp": "cd lp-templates && npm ci && npm run build && cd .. && node scripts/copy-lp.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
+  },
+  "engines": {
+    "node": ">=20.9"
   },
   "devDependencies": {
     "wrangler": "^4.40.0"
