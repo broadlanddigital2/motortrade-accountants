@@ -56,15 +56,16 @@ export const places = {
       ['Does it matter where in the UK we are?', 'No. Our office is in Hethersett, Norwich, but our service is fully remote. We work with you by phone, video call and cloud accounting software, without office appointments or client visits.'],
       ['Can you take over from my current accountant mid-year?', 'We can discuss a mid-year switch and help plan a practical handover. The timing depends on your records, upcoming deadlines and existing arrangements.'],
     ],
-    variants: ['motor-trade', 'automotive', 'dealership'],
+    variants: ['motor-trade', 'automotive', 'dealership', 'used-car'],
   },
 };
 
-const keywordWords = { 'motor-trade': 'Motor Trade', automotive: 'Automotive', dealership: 'Dealership' };
+const keywordWords = { 'motor-trade': 'Motor Trade', automotive: 'Automotive', dealership: 'Dealership', 'used-car': 'Used Car Dealer' };
 const formHeadings = {
   'motor-trade': 'Book your free discovery call',
   automotive: 'Your free automotive discovery call',
   dealership: 'Your free dealership discovery call',
+  'used-car': 'Your free used car dealer discovery call',
 };
 
 export function placeProps(slug, value) {

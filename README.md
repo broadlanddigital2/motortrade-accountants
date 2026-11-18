@@ -11,11 +11,15 @@ A static copy of https://themotortradeaccountants.co.uk (WordPress), taken 17 No
 
 | Page | URL | Variant links (redirect to) |
 | --- | --- | --- |
-| National (launch) | `/lp/uk/` | `?kw=automotive` → `/lp/uk/automotive/`, `?kw=dealership` → `/lp/uk/dealership/` |
+| National (launch) | `/lp/uk/` | `?kw=automotive` → `/lp/uk/automotive/`, `?kw=dealership` → `/lp/uk/dealership/`, `?kw=used-car` → `/lp/uk/used-car/` |
 | Norwich location | `/lp/norwich/` | `?kw=automotive` → `/lp/norwich/automotive/` |
 | VAT margin scheme | `/lp/margin-scheme/` | `?kw=vat-margin-scheme` → `/lp/margin-scheme/vat-margin-scheme/`, `?kw=second-hand` → `/lp/margin-scheme/second-hand/` |
 
-The redirects keep every query parameter (gclid, UTM), and all `/lp/` pages send `X-Robots-Tag: noindex`. The forms are still in demo mode (they open a confirmation dialogue and send nothing) until `NEXT_PUBLIC_LEAD_ENDPOINT` is set at build time; see `lp-templates/README.md`.
+The redirects keep every query parameter (gclid, UTM), and all `/lp/` pages send `X-Robots-Tag: noindex`.
+
+**Forms → CRM:** the landing page forms post to the Worker's `/api/lead` (`lead-form.js`; set at build time by `lp-templates/.env.production`). It checks the fields and sends each enquiry into the CRM on its own channel, **Motortrade Accountants PPC Landing Pages**, separate from the main website form and the enquiry bot. The page address keeps the ad click (gclid, `ag`, UTM). The CRM emails the channel's alert address: Justin while testing, `enquire@themotortradeaccountants.co.uk` at launch (CRM → channel settings). The main WordPress form isn't connected yet; its CRM channel ("Main Website Form") is ready.
+
+**Ad group headings (from the CRM):** ads link to the plain page (`/lp/uk/`, `/lp/margin-scheme/`) and every click carries `?ag=<ad group id>`. If that ad group has a page heading in the CRM (Marketing → Ads → campaign → Page headings), `ad-headings.js` swaps it in for that click: the keyword line on location pages ("Used Car Dealer" → "Used Car Dealer Accountants across the UK."), the whole H1 on the margin scheme page, and the line under it if set. It reads the CRM's `ad_landing_headings` table (cached 5 minutes) and changes the HTML and the page's Next.js props together. The `?kw=` variants above still work as a fallback for older links.
 
 To add a city: add an entry to `lp-templates/lib/places.js`, copy `lp-templates/pages/lp/norwich/` to `pages/lp/<slug>/` and change the slug, then add the base path to `LP_VARIANTS` in `worker.js` if it has keyword variants.
 

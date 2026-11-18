@@ -5,13 +5,15 @@ import { ServiceExplorer, SectorCards, PainGroups, SelfCheck } from '../componen
 import { locationFaqs, marginFaqs } from '../data/content.json';
 import { places } from '../lib/places';
 
-export default function LocationTemplate({kw, keyword, formHeading, place = places.norwich}) {
+// adHeading / adLead: an ad group's page heading from the CRM, set by the Worker for ad clicks (?ag=). adHeading replaces
+// only the keyword line ("Used Car Dealer"), so the page still reads "… Accountants across the UK."
+export default function LocationTemplate({kw, keyword, formHeading, place = places.norwich, adHeading, adLead}) {
 return (<CheckProvider><PageShell margin={false}><Head><title>{`${keyword} Accountants ${place.titlePlace} | The Motortrade Accountants`}</title><meta name="description" content={place.metaDescription} /></Head>
 
 <SiteHeader margin={false} />
 
 
-<main><section className="hero"><div className="wrap hero-grid"><div className="hero-copy"><p className="eyebrow">{place.eyebrow}</p><h1><span id="keyword">{keyword}</span><br />Accountants<br /><em>{place.h1Place}</em></h1><p className="lead">Free discovery call. More clarity.<br />More time for your business.</p><p className="promise">Pay less tax. Save time. Grow with confidence.</p><ul className="ticks"><li>Specialists who understand the motor trade</li><li>From start-ups to independent dealers</li><li>Your finances. One point of contact.</li></ul></div>
+<main><section className="hero"><div className="wrap hero-grid"><div className="hero-copy"><p className="eyebrow">{place.eyebrow}</p><h1><span id="keyword">{adHeading || keyword}</span><br />Accountants<br /><em>{place.h1Place}</em></h1><p className="lead">{adLead || <>Free discovery call. More clarity.<br />More time for your business.</>}</p><p className="promise">Pay less tax. Save time. Grow with confidence.</p><ul className="ticks"><li>Specialists who understand the motor trade</li><li>From start-ups to independent dealers</li><li>Your finances. One point of contact.</li></ul></div>
 <LeadForm mode="location" heading={formHeading} keyword={kw} city={place.city} /></div></section>
 <TrustBand />
 <section className="section"><div className="wrap"><div className="section-top"><div><p className="eyebrow">BUILT AROUND YOUR BUSINESS</p><h2>On the forecourt.<br />In the workshop.<br /><em>We know your world.</em></h2></div><p>{place.sectorLine}</p></div><SectorCards /></div></section>

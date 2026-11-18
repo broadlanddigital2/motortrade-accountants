@@ -7,6 +7,13 @@
 //    through to WP_ORIGIN, so the forms and newsletter keep working.
 // 4. Marks the workers.dev preview address as noindex so it can't compete
 //    with the live site in Google.
+// 5. Ad clicks (?ag=<ad group id>) on a /lp/ page see the heading set for that
+//    ad group in the CRM (ad-headings.js).
+// 6. /api/lead takes the PPC landing page forms and sends them into the CRM
+//    (lead-form.js), on their own channel.
+
+import { withAdHeading } from "./ad-headings.js";
+import { handleLead } from "./lead-form.js";
 
 const REDIRECTS = {
   "/home": "/",
@@ -18,7 +25,7 @@ const REDIRECTS = {
 // PPC landing pages (built from lp-templates/). Each keyword variant is its own static page;
 // ?kw=<variant> on the base URL redirects there, keeping gclid, UTM and every other parameter.
 const LP_VARIANTS = {
-  "/lp/uk/": { automotive: "automotive/", dealership: "dealership/" },
+  "/lp/uk/": { automotive: "automotive/", dealership: "dealership/", "used-car": "used-car/" },
   "/lp/norwich/": { automotive: "automotive/" },
   "/lp/margin-scheme/": { "vat-margin-scheme": "vat-margin-scheme/", "second-hand": "second-hand/", calculator: "calculator/" },
 };
@@ -34,6 +41,9 @@ export default {
       url.hostname = url.hostname.slice(4);
       return Response.redirect(url.toString(), 301);
     }
+
+    // PPC landing page forms → the CRM (lead-form.js).
+    if (url.pathname === "/api/lead") return withHeaders(await handleLead(request, env), url);
 
     const to = REDIRECTS[url.pathname];
     if (to) return Response.redirect(new URL(to + url.search, url).toString(), 301);
@@ -61,6 +71,7 @@ export default {
     ) {
       res = await proxy(request, url, origin);
     }
+    res = await withAdHeading(request, res, env);
     return withHeaders(res, url);
   },
 };
