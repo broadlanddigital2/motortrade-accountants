@@ -11,12 +11,13 @@ A static copy of https://themotortradeaccountants.co.uk (WordPress), taken 17 No
 
 | Page | URL | Variant links (redirect to) |
 | --- | --- | --- |
+| National (launch) | `/lp/uk/` | `?kw=automotive` → `/lp/uk/automotive/`, `?kw=dealership` → `/lp/uk/dealership/` |
 | Norwich location | `/lp/norwich/` | `?kw=automotive` → `/lp/norwich/automotive/` |
 | VAT margin scheme | `/lp/margin-scheme/` | `?kw=vat-margin-scheme` → `/lp/margin-scheme/vat-margin-scheme/`, `?kw=second-hand` → `/lp/margin-scheme/second-hand/` |
 
 The redirects keep every query parameter (gclid, UTM), and all `/lp/` pages send `X-Robots-Tag: noindex`. The forms are still in demo mode (they open a confirmation dialogue and send nothing) until `NEXT_PUBLIC_LEAD_ENDPOINT` is set at build time; see `lp-templates/README.md`.
 
-To add a city: copy `lp-templates/pages/lp/norwich/` and `templates/LocationTemplate.jsx`, change the city content, and add the base path to `LP_VARIANTS` in `worker.js` if it has keyword variants.
+To add a city: add an entry to `lp-templates/lib/places.js`, copy `lp-templates/pages/lp/norwich/` to `pages/lp/<slug>/` and change the slug, then add the base path to `LP_VARIANTS` in `worker.js` if it has keyword variants.
 
 ## Run and deploy
 

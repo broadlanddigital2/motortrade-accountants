@@ -7,7 +7,7 @@ export function CheckProvider({children}) {
 }
 export function useCheck() { return useContext(CheckContext); }
 const trackingKeys = ['gclid','gbraid','wbraid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
-export function LeadForm({mode, page, heading, keyword}) {
+export function LeadForm({mode, page, heading, keyword, city = 'Norwich'}) {
  const margin = mode === 'margin' || page === 'margin-scheme';
  const quick = mode === 'quick';
  const {answers} = useCheck();
@@ -59,7 +59,7 @@ export function LeadForm({mode, page, heading, keyword}) {
    <label className="check"><input type="checkbox" name="newsletter" value="yes" /> Send me occasional news and motor trade insights.</label>
   </>)}
   <input type="hidden" name="page" value={margin ? 'margin-scheme' : 'location'} />
-  {!margin && <input type="hidden" name="city" value="Norwich" />}
+  {!margin && <input type="hidden" name="city" value={city} />}
   <input type="hidden" name="kw" value={keyword} />
   {margin && <><input type="hidden" name="self_check_score" value={score} /><input type="hidden" name="self_check_answered" value={answered} /></>}
   {trackingKeys.map(k => <input key={k} type="hidden" name={k} value={attribution[k] || ''} />)}

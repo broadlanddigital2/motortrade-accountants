@@ -3,7 +3,7 @@
 //   /lp/norwich/automotive/  → "Automotive" wording
 // The Worker redirects /lp/norwich/?kw=automotive to the matching path, keeping every query parameter.
 import LocationTemplate from '../../../templates/LocationTemplate';
-import { locationProps } from '../../../lib/keywords';
+import { placeProps } from '../../../lib/places';
 
 export default LocationTemplate;
 
@@ -12,5 +12,5 @@ export function getStaticPaths() {
 }
 
 export function getStaticProps({ params }) {
-  return { props: locationProps(params.kw?.[0]) };
+  return { props: placeProps('norwich', params.kw?.[0]) };
 }
