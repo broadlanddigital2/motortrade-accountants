@@ -17,6 +17,8 @@ A static copy of https://themotortradeaccountants.co.uk (WordPress), taken 17 No
 
 The redirects keep every query parameter (gclid, UTM), and all `/lp/` pages send `X-Robots-Tag: noindex`. The forms are still in demo mode (they open a confirmation dialogue and send nothing) until `NEXT_PUBLIC_LEAD_ENDPOINT` is set at build time; see `lp-templates/README.md`.
 
+**Ad group headings (from the CRM):** ads link to the plain page (`/lp/uk/`, `/lp/margin-scheme/`) and every click carries `?ag=<ad group id>`. If that ad group has a page heading in the CRM (Marketing → Ads → campaign → Page headings), `ad-headings.js` swaps it in for that click: the keyword line on location pages ("Used Car Dealer" → "Used Car Dealer Accountants across the UK."), the whole H1 on the margin scheme page, and the line under it if set. It reads the CRM's `ad_landing_headings` table (cached 5 minutes) and changes the HTML and the page's Next.js props together. The `?kw=` variants above still work as a fallback for older links.
+
 To add a city: add an entry to `lp-templates/lib/places.js`, copy `lp-templates/pages/lp/norwich/` to `pages/lp/<slug>/` and change the slug, then add the base path to `LP_VARIANTS` in `worker.js` if it has keyword variants.
 
 ## Run and deploy

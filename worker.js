@@ -7,6 +7,10 @@
 //    through to WP_ORIGIN, so the forms and newsletter keep working.
 // 4. Marks the workers.dev preview address as noindex so it can't compete
 //    with the live site in Google.
+// 5. Ad clicks (?ag=<ad group id>) on a /lp/ page see the heading set for that
+//    ad group in the CRM (ad-headings.js).
+
+import { withAdHeading } from "./ad-headings.js";
 
 const REDIRECTS = {
   "/home": "/",
@@ -61,6 +65,7 @@ export default {
     ) {
       res = await proxy(request, url, origin);
     }
+    res = await withAdHeading(request, res, env);
     return withHeaders(res, url);
   },
 };
