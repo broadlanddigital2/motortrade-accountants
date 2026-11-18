@@ -2,6 +2,7 @@ export const marginVariants = {
  'margin-scheme-accountants': ['VAT Margin Scheme Accountants for Car Dealers', 'Get your free margin scheme check'],
  'vat-margin-scheme': ['Getting the VAT Margin Scheme Right on Used Cars', 'Check your margin scheme VAT for free'],
  'second-hand': ['Second-Hand Car Margin Scheme: Is Your VAT Right?', 'Get your free margin scheme check'],
+ 'calculator': ['VAT Margin Scheme Calculator for Car Dealers', 'Get every sale checked for free'],
 };
 export function locationProps(value) {
  const kw = value === 'automotive' ? 'automotive' : 'motor-trade';

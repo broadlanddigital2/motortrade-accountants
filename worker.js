@@ -19,7 +19,7 @@ const REDIRECTS = {
 // ?kw=<variant> on the base URL redirects there, keeping gclid, UTM and every other parameter.
 const LP_VARIANTS = {
   "/lp/norwich/": { automotive: "automotive/" },
-  "/lp/margin-scheme/": { "vat-margin-scheme": "vat-margin-scheme/", "second-hand": "second-hand/" },
+  "/lp/margin-scheme/": { "vat-margin-scheme": "vat-margin-scheme/", "second-hand": "second-hand/", calculator: "calculator/" },
 };
 
 const PROXY_PREFIXES = ["/wp-admin/admin-ajax.php", "/wp-json/"];
