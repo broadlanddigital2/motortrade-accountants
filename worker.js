@@ -18,7 +18,7 @@ const REDIRECTS = {
 // PPC landing pages (built from lp-templates/). Each keyword variant is its own static page;
 // ?kw=<variant> on the base URL redirects there, keeping gclid, UTM and every other parameter.
 const LP_VARIANTS = {
-  "/lp/uk/": { automotive: "automotive/", dealership: "dealership/" },
+  "/lp/uk/": { automotive: "automotive/", dealership: "dealership/", "used-car": "used-car/" },
   "/lp/norwich/": { automotive: "automotive/" },
   "/lp/margin-scheme/": { "vat-margin-scheme": "vat-margin-scheme/", "second-hand": "second-hand/", calculator: "calculator/" },
 };

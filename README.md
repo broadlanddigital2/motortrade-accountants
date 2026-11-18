@@ -11,7 +11,7 @@ A static copy of https://themotortradeaccountants.co.uk (WordPress), taken 17 No
 
 | Page | URL | Variant links (redirect to) |
 | --- | --- | --- |
-| National (launch) | `/lp/uk/` | `?kw=automotive` → `/lp/uk/automotive/`, `?kw=dealership` → `/lp/uk/dealership/` |
+| National (launch) | `/lp/uk/` | `?kw=automotive` → `/lp/uk/automotive/`, `?kw=dealership` → `/lp/uk/dealership/`, `?kw=used-car` → `/lp/uk/used-car/` |
 | Norwich location | `/lp/norwich/` | `?kw=automotive` → `/lp/norwich/automotive/` |
 | VAT margin scheme | `/lp/margin-scheme/` | `?kw=vat-margin-scheme` → `/lp/margin-scheme/vat-margin-scheme/`, `?kw=second-hand` → `/lp/margin-scheme/second-hand/` |
 
