@@ -9,8 +9,11 @@
 //    with the live site in Google.
 // 5. Ad clicks (?ag=<ad group id>) on a /lp/ page see the heading set for that
 //    ad group in the CRM (ad-headings.js).
+// 6. /api/lead takes the PPC landing page forms and sends them into the CRM
+//    (lead-form.js), on their own channel.
 
 import { withAdHeading } from "./ad-headings.js";
+import { handleLead } from "./lead-form.js";
 
 const REDIRECTS = {
   "/home": "/",
@@ -38,6 +41,9 @@ export default {
       url.hostname = url.hostname.slice(4);
       return Response.redirect(url.toString(), 301);
     }
+
+    // PPC landing page forms → the CRM (lead-form.js).
+    if (url.pathname === "/api/lead") return withHeaders(await handleLead(request, env), url);
 
     const to = REDIRECTS[url.pathname];
     if (to) return Response.redirect(new URL(to + url.search, url).toString(), 301);
